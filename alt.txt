@@ -1,0 +1,62 @@
+# my_post = [{"title": "title of the post", "content": "content of the post", "id": "user id"}, {"title": "vlog 26", "content": "Goa visit", "id": "1"}, {"title": "vlog 27", "content": "Kerala visit", "id": "2"}]
+
+# def find_id(id):
+#     for i in my_post:
+#         if i["id"] == id:
+#             return i
+
+# def find_index(id):
+#     for i, p in enumerate(my_post):
+#         if p['id'] == id:
+#             return i
+
+# @app.get("/sqlalchamy")
+# async def test_post(db: Session = Depends(get_db)):
+#     posts = db.query(models.Post).all()
+#     return {"data": posts}
+
+
+# @app.get("/posts")
+# async def get_posts():
+#     cursor.execute(""" SELECT * FROM posts ORDER BY id ASC""")
+#     posts = cursor.fetchall()
+#     return {"data": posts}
+
+
+# @app.post("/posts", status_code=status.HTTP_201_CREATED)
+# async def create_posts(post: Post):
+#     cursor.execute(""" INSERT INTO posts (title, content) VALUES (%s, %s) RETURNING * """, (post.title, post.content))    
+#     new_post = cursor.fetchone()
+#     conn.commit()
+#     return {"new post: ": new_post}
+
+# @app.get("/posts/{id}")
+# async def get_post(id: str):
+#     cursor.execute(""" SELECT * FROM posts WHERE id=%s """, (id))
+#     post = cursor.fetchone()
+#     if not post:
+#         raise HTTPException(status_code= status.HTTP_404_NOT_FOUND, detail= f"the post with id {id} not found")
+#     return {"data": post}
+
+# @app.post("/createpost")
+# async def crete_post(payload: dict = Body(...)):
+#     print(payload)
+#     return {"new post": f"title: {payload['title']}, content: {payload['content']}"}
+
+# @app.post("/createpost")
+# async def create_post(newPost: Post):
+#     print(newPost)
+#     print(newPost.dict())
+#     return {"newPost": newPost}
+
+
+
+
+
+@app.get("/users/me")
+async def read_user_me():
+    return {"user id: ": "the current user"}
+
+@app.get("/users/{user_id}")
+async def read_user(user_id: str):
+    return {"user id: ": user_id}

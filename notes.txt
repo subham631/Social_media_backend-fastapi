@@ -1,0 +1,4 @@
+pydantic model help us to define how the request and response should look like
+whereas the sqlalchemy model helps to define how the db table should look like
+
+url - {{URL}}posts?search=updated%20title&limit=2&skip=0

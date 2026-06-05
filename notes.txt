@@ -2,3 +2,10 @@ pydantic model help us to define how the request and response should look like
 whereas the sqlalchemy model helps to define how the db table should look like
 
 url - {{URL}}posts?search=updated%20title&limit=2&skip=0
+
+nginx:
+    it acts as a server
+    it acts as a loadbalancer
+    it acts as a cache storeage
+    it acts as a security layer (only one publically accessable server)
+    compress large file 

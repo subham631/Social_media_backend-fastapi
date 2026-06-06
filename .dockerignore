@@ -1,0 +1,32 @@
+# .dockerignore
+
+# Virtual environments (This is where the 100MB+ is coming from!)
+.venv/
+venv/
+
+# Python cache and compiled files
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment variables (CRITICAL SECURITY: Never bake secrets into your image!)
+.env
+
+# Version control
+.git/
+.gitignore
+
+# Local development files and logs
+tree_output.txt
+notes.txt
+alt.txt
+token.png
+
+# Mistyped requirements file (assuming 'requirements.txt' is the actual one you use)
+requirement.txt
+
+# Docker config
+Dockerfile
+.dockerignore
